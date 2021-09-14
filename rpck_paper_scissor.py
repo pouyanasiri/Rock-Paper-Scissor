@@ -1,4 +1,4 @@
-import random
+    import random
 import time
 from os import stat, system, name
 
@@ -78,7 +78,7 @@ def menu() :
         time.sleep(2)
         menu()
         
-def check_result(player_choice ,bot_choice):
+def check_result(player_choice ,bot_choice ,criterion_end ):
     result = ""
     global num_win_bot
     global num_win_player
@@ -106,6 +106,21 @@ def check_result(player_choice ,bot_choice):
     time.sleep(4)
     clear()
     
+    if num_win_bot == int(criterion_end) :
+        show_info()
+        print("GAME OVER")
+        time.sleep(2)
+        return 1
+            
+    elif num_win_player == int(criterion_end):
+        show_info()
+        print("You win at all !!!")
+        time.sleep(2)
+        return 1
+    show_info()
+    return 0
+
+    
 def show_info():
     global num_win_bot
     global num_win_player
@@ -124,26 +139,16 @@ def game():
     if int(criterion_end) == 0:
         menu()
     while(True):
-        check_result(set_choice(),random.choices(choices)[0])
-        show_info()
+        flag = check_result(set_choice(), random.choices(choices)[0], criterion_end)
         time.sleep(2)
-        if num_win_bot == int(criterion_end) :
-            print("GAME OVER")
-            time.sleep(2)
+        if flag == 1:
             break
-        elif num_win_player == int(criterion_end):
-            print("You win at all !!!")
-            time.sleep(2)
-            break
-    
     menu() 
-    
     
 
 def main():
     print("\t****Welcome to Rock Paper Scissor Game***")
     menu()
-    
     
 if __name__ == '__main__':
     main()
