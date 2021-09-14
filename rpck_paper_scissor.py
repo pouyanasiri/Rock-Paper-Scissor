@@ -1,4 +1,4 @@
-    import random
+import random
 import time
 from os import stat, system, name
 
@@ -127,11 +127,13 @@ def show_info():
     print(f"number of you win : {num_win_player}")
     print(f"number of bot win : {num_win_bot}") 
 
-        
-        
-def game():
-    num_win_bot = 0
+def assign_global_variavle():
+    global num_win_bot 
+    global num_win_player 
     num_win_player = 0
+    num_win_bot = 0
+def game():
+    
     criterion_end = 0
     criterion_end = input("What is the number of wins for the end of the game : ")
     if not criterion_end.isnumeric():
@@ -143,6 +145,7 @@ def game():
         time.sleep(2)
         if flag == 1:
             break
+    assign_global_variavle()
     menu() 
     
 
@@ -153,5 +156,4 @@ def main():
 if __name__ == '__main__':
     main()
 
-    
     
