@@ -127,7 +127,7 @@ def show_info():
     print(f"number of you win : {num_win_player}")
     print(f"number of bot win : {num_win_bot}") 
 
-def assign_global_variavle():
+def assign_global_variable():
     global num_win_bot 
     global num_win_player 
     num_win_player = 0
@@ -145,7 +145,7 @@ def game():
         time.sleep(2)
         if flag == 1:
             break
-    assign_global_variavle()
+    assign_global_variable()
     menu() 
     
 
