@@ -41,7 +41,7 @@ def help_game():
         else:
             print("Please select true choice !")
             time.sleep(2)
-            help()
+            help_game()
             
     
         
