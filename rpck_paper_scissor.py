@@ -64,7 +64,7 @@ def set_choice():
         return set_choice()
         
 def menu() :
-    print("* 1 : new game\n* 2 : Help \n* 3 : Exit")
+    print("* 1 : New game\n* 2 : Help \n* 3 : Exit")
     number = input("please choose on of the choices : ")
     clear()
     if number == "1":
@@ -137,6 +137,9 @@ def game():
     criterion_end = 0
     criterion_end = input("What is the number of wins for the end of the game : ")
     if not criterion_end.isnumeric():
+        print("Wrong input")
+        time.sleep(2)
+        clear()
         game()
     if int(criterion_end) == 0:
         menu()
